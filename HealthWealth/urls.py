@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.urls import path
-from numpy import sign
 
 from landing.views import landing
 from login.views import login

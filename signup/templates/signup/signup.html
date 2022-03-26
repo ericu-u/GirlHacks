@@ -4,11 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign Up for HealthWealth</title>
+    <link rel="stylesheet" href=./../../static/css/signup.css>
+    <script defer src="./../../static/js/signup.js"></script>
 </head>
-<body>
-    <div class="block">
-        
-    </div>
+<body id="body">
+    <form class="inputs" method="POST" action="signup">
+        {% csrf_token %}
+        <div class="wind">
+            <div id="spacer-1"></div>
+            <div class="block">
+                <h1 id="title">TipShip Signup</h1>
+                <div class="ip-area">
+                    <h4 class="ques">Email</h4>
+                    {{ form.email }}
+                    <h4 class="ques">Username</h4>
+                    {{ form.username }}
+                    <h4 class="ques">Password</h4>
+                    {{ form.password }}
+                </div>
+                <button id="move">Next</button>
+            </div>
+        </div>
+        <div class="wind">
+            <div id="spacer-2"></div>
+            <div class="block">
+                <div class="ip-area">
+                    <h4 class="ques">Input your Height (in)</h4>
+                    {{ form.height }}
+                    <h4 class="ques">Input your Weight (lbs)</h4>
+                    {{ form.weight }}
+                    <h4 class="ques">Input your Age</h4>
+                    {{ form.age }}
+                    <h4 class="ques">How many times a week do you excercise?</h4>
+                    {{ form.excercise }}
+                    <h4 class="ques">What type of diet do you have?</h4>
+                    {{ form.diet }}
+                </div>
+                <div id="bt-wrapper">
+                    <button id="back">Back</button>
+                    <button type="submit" id="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
 </body>
 </html>
