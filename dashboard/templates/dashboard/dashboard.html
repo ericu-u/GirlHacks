@@ -23,9 +23,13 @@
             <div class="central">
                 <h2 class="section-label">Dashboard</h2>
                 <div class="numbers">
-                    <h3>height</h3>
+
+                    {% block content %}
+                    <h3>{{ height }}</h3>
                     <h3>sleep</h3>
                     <h3>BMI</h3>
+                    {% endblock %}
+
                 </div>
                 <div class="charts">
                     <canvas id="weightloss-chart"></canvas>

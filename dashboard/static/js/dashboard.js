@@ -1,5 +1,10 @@
 
+var document.getElementById()
 
+
+function refreshChart() {
+
+}
 
 window.onload = function() {
     var refreshInterval = 3000;
