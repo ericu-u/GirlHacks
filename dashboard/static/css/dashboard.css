@@ -2,12 +2,41 @@ h1 {
   color: red;
 }
 
+.section-label {
+}
+
 .dashboard-page {
   display: flex;
   height: 100%;
   border-style: solid;
   border-width: 5px;
   border-color: yellow;
+}
+
+.central {
+  flex-grow: 3;
+
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+  border-style: solid;
+  border-width: 5px;
+  border-color: red;
+}
+
+.right {
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+}
+
+.numbers {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .sidebar {
@@ -18,9 +47,6 @@ h1 {
   /* position: fixed; */
   height: 100%;
   /* overflow: auto; */
-  border-style: solid;
-  border-width: 5px;
-  border-color: red;
 }
 
 /* Sidebar links */
@@ -44,7 +70,9 @@ h1 {
 }
 
 .not-sidebar {
-  flex-grow: 6;
+  display: flex;
+  flex-grow: 7;
+  flex-direction: row;
   border-style: solid;
   border-width: 5px;
   border-color: blue;

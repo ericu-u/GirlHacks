@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="../../static/css/dashboard.css">
+    <script src="../../static/js/dashboard.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,11 +20,22 @@
     
         <div class="not-sidebar">
 
-            <div class="">
-
+            <div class="central">
+                <h2 class="section-label">Dashboard</h2>
+                <div class="numbers">
+                    <h3>height</h3>
+                    <h3>sleep</h3>
+                    <h3>BMI</h3>
+                </div>
+                <div class="charts">
+                    <canvas id="weightloss-chart"></canvas>
+                </div>
+                
             </div>
 
-            <h1>This is Dashboard.</h1>
+            <div class="right">
+                <h2 class="section-label">Resources</h2>
+            </div>
         </div>
     </div>
 
