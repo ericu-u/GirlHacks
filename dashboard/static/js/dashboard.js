@@ -15,7 +15,8 @@ function LoadChart(labels, label, data, canvas, title) {
             title: {
                 display: true, // defaults to false
                 text: title,
-                fontSize: 40,
+                fontSize: 60,
+                color: 'black',
             },
             legend: {
                 fullSize: false,
@@ -24,15 +25,17 @@ function LoadChart(labels, label, data, canvas, title) {
         scales: {
             x: {
                 title: {
-                    text: 'Day of the Week',
+                    text: 'Week Number',
                     display: true,
+                    color: 'black',
                 }
             },
             y: {
                 beginAtZero: true,
                 title: {
-                    text: 'Weight',
+                    text: label,
                     display: true,
+                    color: 'black',
                 }
             }
         },
