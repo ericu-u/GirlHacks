@@ -37,12 +37,22 @@
         </div>
         <div id="display" class="not-sidebar">
             <div id="settings-modal">
-                <h3 class="ttl">Change Username</h3>
-                <input type="text">
-                <h3 class="ttl">Change Password</h3>
-                <input type="text">
-                <button>Log Out</button>
-                <button>Save</button>
+                <h1 id="settings-title">Settings</h1>
+                <div id="wrap">
+                    <h3 class="ttl">Change Email</h3>
+                    <input type="text">
+                    <h3 class="ttl">Change Username</h3>
+                    <input type="text">
+                    <h3 class="ttl">Change Password</h3>
+                    <input type="text">
+                    <h3 class="ttl">Notifcation Preferences</h3>
+                    <select>
+                        <option>Full Notifications</option>
+                    </select>
+                    <br>
+                    <button id="lg" onclick="location.href = '/logout'">Log Out</button>
+                    <button id="sv">Save</button>
+                </div>
             </div>
         </div>
     </div>
