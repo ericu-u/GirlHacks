@@ -27,6 +27,7 @@ window.onload = function() {
             }
         },
         responsive: false,
+        maintainAspectRatio: false,
     };
 
     var ctx = document.getElementById('weightloss-chart').getContext('2d');
