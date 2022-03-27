@@ -6,7 +6,9 @@
 }
 
 body {
-    height: 200vh;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #00B2CA, #7dcfb6);
+    overflow-x: hidden;
 }
 
 .wind {
@@ -33,6 +35,7 @@ body {
     border-radius: 15px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     text-align: center;
+    background-color: white;
 }
 
 .block .ip-area {
@@ -67,14 +70,14 @@ body {
     margin: 0.5vh auto 0;
     border: none;
     border-radius: 5px;
-    background-color: #4e79cf;
+    background-color: #F4C095;
     transition: 0.3s;
     padding: 1.5% 3%;
 }
 
 #move:hover {
     cursor: pointer;
-    background-color: #5e84d1;
+    opacity: 0.75;
 }
 
 #bt-wrapper {
@@ -112,4 +115,14 @@ body {
 #error {
     color: red;
     font-size: 23px;
+}
+
+#alt {
+    color: black;
+    padding-top: 1vh;
+    text-decoration: none;
+}
+
+#alt:hover {
+    text-decoration: underline;
 }
