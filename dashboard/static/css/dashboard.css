@@ -52,7 +52,6 @@ nav h3:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  border-right: 1px solid gray;
 }
 #container .sidebar .sidebar-content {
   width: 90%;
@@ -89,20 +88,20 @@ nav h3:hover {
   flex-direction: row;
 }
 
+/* Display Area (Right of sidenav) */
 #container .not-sidebar .central {
   flex: 3;
-
   display: flex;
   flex-direction: column;
-
   text-align: center;
 }
-
+#container .not-sidebar .central .section-label {
+  font-size: 50px;
+}
 #container .not-sidebar .central .numbers {
   display: flex;
   justify-content: space-evenly;
 }
-
 #container .not-sidebar .central .numbers .numbers-content {
   width: 30%;
   height: 15vh;
@@ -118,19 +117,50 @@ nav h3:hover {
   flex-direction: column;
   align-items: center;
 }
-
 #container .not-sidebar .central .numbers .numbers-content:hover {
   background-color: #ccc;
   cursor: pointer;
 }
 
+/* Chart Styling */
+#container .central .charts {
+  background-color: white;
+  border: none;
+  border-radius: 7.5px;
+  padding: 2.5%;
+  width: 60vw;
+  height: 52.5vh;
+  margin: 2vh auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+#container .central #chart2 {
+  display: none;
+}
+#container .central #chart3 {
+  display: none;
+}
+
+/* Notifs */
 #container .not-sidebar .right {
   flex: 1;
-  border-left: 1px solid gray;
-
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+#container .not-sidebar #notif-wrapper {
+  background-color: white;
+  border: none;
+  border-radius: 7.5px;
+  width: 90%;
+  margin: 0 auto;
+  height: 80vh;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+#container .not-sidebar #notif-wrapper .section-label {
+  margin-top: 2.5vh;
+  font-size: 32.5px;
 }
 
 /* Settings */
