@@ -170,7 +170,7 @@ nav h3 {
 /* Settings */
 #settings-modal {
   border: none;
-  border-radius: 15px;
+  border-radius: 10px;
   width: 30vw;
   padding: 2.5%;
   margin: auto 0;
@@ -228,4 +228,18 @@ nav h3 {
 }
 #sv:hover {
   background-color: #5e84d1;
+}
+
+/* About */
+#about-modal {
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 2.5%;
+}
+#about-modal h1 {
+  font-size: 45px;
+}
+#about-modal #h3 {
+  font-size: 20px;
 }
