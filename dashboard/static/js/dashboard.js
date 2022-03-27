@@ -12,14 +12,30 @@ window.onload = function() {
     };
     
     var chartOptions = {
-        title: {
-            display: true, // defaults to false
-            text: "Bar Chart with Dynamic Data",
-            fontSize: 45,
+        plugins: {
+            title: {
+                display: true, // defaults to false
+                text: "Line Chart of Weight over the Week",
+                fontSize: 40,
+            },
+            legend: {
+                fullSize: false,
+            },
         },
+        
         scales: {
+            x: {
+                title: {
+                    text: 'Day of the Week',
+                    display: true,
+                }
+            },
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+                title: {
+                    text: 'Weight',
+                    display: true,
+                }
             }
         },
         responsive: false,
