@@ -14,7 +14,7 @@ Both of us used to be competitive swimmers but grew complacent due to COVID. We 
 The backend is in Python utilizing the [Django](https://www.djangoproject.com/) framework. The front end is a mix of HTML/CSS and JavaScript. We use Jquery AJAX requests to asynchronously update the front end. Moreover, we use [Chart.js](https://www.chartjs.org/) to create a chart of spending over a period of time. We use Pandas and statistical analysis to make predictions and recommended actions.
 
 
-Code Flow:
+Code Flow:<br>
 ![](https://cdn.discordapp.com/attachments/621553050766540820/957616787166486578/unknown.png)
 
 ## Running
