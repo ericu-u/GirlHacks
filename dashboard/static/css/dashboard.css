@@ -5,93 +5,73 @@
   font-family: "Poppins";
 }
 
-#weightloss-chart {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+body {
+  height: 100vh;
+  background-image: linear-gradient(to bottom, #00B2CA, #7dcfb6);
 }
 
-.dashboard-page {
+/* Top Nav */
+nav h1 {
+  flex: 1;
+  font-size: 35px;
+  font-weight: bold;
+  padding-left: 1.5vw;
+}
+nav #nav-spacer {
+  flex: 7;
+  width: 80vw;
+}
+nav h3 {
+  flex: 1;
+  padding-top: 1.5vh;
+  padding-right: 1.5vw;
+}
+nav h3:hover {
+  cursor: pointer;
+}
+
+/* Lower Area */
+#container {
+  margin-top: 5vh;
   display: flex;
-  height: 100%;
-  border-style: solid;
-  border-width: 5px;
-  border-color: yellow;
-}
-
-.central {
-  flex-grow: 3;
-
-  display: flex;
-  flex-direction: column;
-
-  text-align: center;
-  border-style: solid;
-  border-width: 5px;
-  border-color: red;
-}
-
-.right {
-  flex-grow: 1;
-
-  display: flex;
-  flex-direction: column;
-
-  text-align: center;
-}
-
-.numbers {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-/* .charts {
-  margin-left: auto;
-  margin-right: auto;
-} */
-
-.sidebar {
-  /* margin: 0;
-  padding: 0; */
-  flex-grow: 1;
-  background-color: #f1f1f1;
-  /* position: fixed; */
-  height: 100%;
-  /* overflow: auto; */
-}
-
-/* Sidebar links */
-.sidebar a {
-  display: block;
-  color: black;
-  padding: 16px;
-  text-decoration: none;
-}
-
-/* Active/current link */
-.sidebar a.active {
-  background-color: #04aa6d;
-  color: white;
-}
-
-/* Links on mouse-over */
-.sidebar a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
-
-.not-sidebar {
-  display: flex;
-  flex-grow: 7;
   flex-direction: row;
-  border-style: solid;
-  border-width: 5px;
-  border-color: blue;
+  justify-content: flex-start;
+}
+#container .sidebar {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+}
+#container .sidebar .sidebar-content {
+  flex: 1;
+  width: 90%;
+  margin: 1vh auto;
+  padding: 4% 5%;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  border: 3px solid white;
+}
+#container .sidebar .sidebar-content:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+#container .sidebar #selected {
+  border: 5px solid #1D4E89;
+}
+#container .sidebar .sidebar-content h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(72, 72, 72);
+  margin-left: 1vh;
+}
+#container .not-sidebar {
+  flex: 7;
 }
 
-/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-div.content {
-  margin-left: 200px;
-  padding: 1px 16px;
-  height: 1000px;
-}
+/* Do */

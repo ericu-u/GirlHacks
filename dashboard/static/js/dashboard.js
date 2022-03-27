@@ -1,10 +1,6 @@
 
 // var  document.getElementById()
 
-function refreshChart() {
-
-}
-
 window.onload = function() {
     var chartData = {
         labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', ],
@@ -37,7 +33,4 @@ window.onload = function() {
         data: chartData,
         options: chartOptions
     });
-        
-    myChart.update();
-
 }
