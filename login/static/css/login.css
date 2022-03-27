@@ -16,7 +16,7 @@ body {
 }
 
 #spacer-1 {
-    height: 20vh;
+    height: 10vh;
 }
 
 #spacer-2 {
@@ -125,4 +125,8 @@ body {
 
 #alt:hover {
     text-decoration: underline;
+}
+
+#logo {
+    max-width: 10vh;
 }

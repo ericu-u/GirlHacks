@@ -9,11 +9,13 @@
     <script defer src="./../../static/js/signup.js"></script>
 </head>
 <body id="body">
+    {% load static %}
     <form class="inputs" method="POST" action="signup">
         {% csrf_token %}
         <div class="wind">
             <div id="spacer-1"></div>
             <div class="block">
+                <img id="logo" src="{% static 'healthwealth.png' %}">
                 <h1 id="title">HealthWealth Signup</h1>
                 <div class="ip-area">
                     <h4 class="ques">Email</h4>
@@ -22,6 +24,8 @@
                     {{ form.username }}
                     <h4 class="ques">Password</h4>
                     {{ form.password }}
+                    <h4 class="ques">Sex</h4>
+                    {{ form.sex }}
                 </div>
                 <button id="move">Next</button>
                 <br><a href="login" id="alt">Have an account? Log In</a>
@@ -37,7 +41,7 @@
                     {{ form.weight }}
                     <h4 class="ques">Input your Age</h4>
                     {{ form.age }}
-                    <h4 class="ques">How many times a week do you excercise?</h4>
+                    <h4 class="ques">How many hours a week do you excercise?</h4>
                     {{ form.excercise }}
                     <h4 class="ques">What type of diet do you have?</h4>
                     {{ form.diet }}

@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Settings</title>
+    <title>About</title>
 </head>
 <body>
     {% load static %}
@@ -28,11 +28,11 @@
                 <i class="material-icons">volunteer_activism</i>
                 <h2>Resources</h2>
             </div>
-            <div class="sidebar-content" onclick="location.href = '/settings'" id="selected">
+            <div class="sidebar-content" onclick="location.href = '/settings'">
                 <i class="material-icons">settings</i>
                 <h2>Settings</h2>
             </div>
-            <div class="sidebar-content" onclick="location.href = '/help'">
+            <div class="sidebar-content" onclick="location.href = '/help'" id="selected">
                 <i class="material-icons">help</i>
                 <h2>How to Use</h2>
             </div>
@@ -42,22 +42,18 @@
             </div>
         </div>
         <div id="display" class="not-sidebar">
-            <div id="settings-modal">
-                <h1 id="settings-title">Settings</h1>
-                <div id="wrap">
-                    <h3 class="ttl">Change Email</h3>
-                    <input type="text">
-                    <h3 class="ttl">Change Username</h3>
-                    <input type="text">
-                    <h3 class="ttl">Change Password</h3>
-                    <input type="text">
-                    <h3 class="ttl">Notifcation Preferences</h3>
-                    <select>
-                        <option>Full Notifications</option>
-                    </select>
-                    <br>
-                    <button id="lg" onclick="location.href = '/logout'">Log Out</button>
-                    <button id="sv">Save</button>
+            <div id="help-wrapper">
+                <div id="help-modal">
+                    <h1>1. Overview</h1>
+                    <p>The overview allows the user to understand their health at a glance. It provides graphs and quick statistics instantly. In addition, notifcations are also displayed here giving tips to improve the wellbeing of the user.</p>
+                    <h1>2. Resources</h1>
+                    <p>The resources tab gives a detailed breakdown of the best actions to take to improve the users health. Here, offical sources, like the CDC, are listed to support HealthWealth's recommendations.</p>
+                    <h1>3. Settings</h1>
+                    <p>Change your username, password, or email quickly and securely. You will also log out through here.</p>
+                    <h1>4. Help</h1>
+                    <p>Get information about other tabs or contact the developers for a question.</p>
+                    <h1>5. About</h1>
+                    <p>Contains information about the software and creators.</p>
                 </div>
             </div>
         </div>

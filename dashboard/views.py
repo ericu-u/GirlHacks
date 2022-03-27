@@ -173,6 +173,7 @@ def resources(request):
         'age': user.age,
         'excercise': user.excercise,
         'diet': user.diet,
+        'bmi': user.bmi
         'weight_percentile': weight_percentile(user.age, user.sex, user.weight),
         'bmi_percentile': bmi_percentile(user.age, user.sex, user.bmi),
     }
@@ -195,6 +196,19 @@ def settings(request):
 
 
 @login_required(login_url='/login/')
+def help(request):
+    user = UserProfile.objects.get(username=request.user)
+    data = {
+        'name': user.username,
+        'height': user.height,
+        'weight': user.weight,
+        'age': user.age,
+        'excercise': user.excercise,
+        'diet': user.diet,
+    }
+    return render(request, 'dashboard/help.html', data)
+
+@login_required(login_url='/login/')
 def about(request):
     user = UserProfile.objects.get(username=request.user)
     data = {
@@ -207,15 +221,38 @@ def about(request):
     }
     return render(request, 'dashboard/about.html', data)
 
+
 # API Endpoint
 
 
 def get_weight(request):
     if request.method == 'GET':
-        weight = [200, 201, 200.5, 199, 200]
-        weeks = ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"]
+        weight = [170, 178, 171, 167, 170, 171, 165]
+        weeks = ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7"]
         response = {
-            "weight": weight,
+            "data": weight,
+            "weeks": weeks
+        }
+        return JsonResponse(response, status=200)
+    return JsonResponse({"error": "Something went wrong"}, status=400)
+
+def get_height(request):
+    if request.method == 'GET':
+        height = [6.7, 10.1, 9.8, 5.3, 6.4, 7.6, 7.9]
+        weeks = ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7"]
+        response = {
+            "data": height,
+            "weeks": weeks
+        }
+        return JsonResponse(response, status=200)
+    return JsonResponse({"error": "Something went wrong"}, status=400)
+
+def get_BMI(request):
+    if request.method == 'GET':
+        bmi = [26.5, 26.4, 27.1, 26.9, 24.8, 26.3, 26.1]
+        weeks = ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7"]
+        response = {
+            "data": bmi,
             "weeks": weeks
         }
         return JsonResponse(response, status=200)

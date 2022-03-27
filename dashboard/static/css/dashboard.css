@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster:wght@300;400;500;600;700;800&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,9 +16,15 @@ nav {
   display: flex;
   flex-direction: row;
   height: 10vh;
-  padding-top: 2vh;
+  padding: 2vh 0;
   color: white;
   background-color: #1d4e89;
+  align-items: center;
+}
+nav #logo-pic {
+  min-width: 4vh;
+  max-width: 7vh;
+  margin-left: 1vh;
 }
 nav h1 {
   flex: 1;
@@ -25,6 +32,7 @@ nav h1 {
   font-weight: bold;
   padding-left: 1.5vw;
   flex-grow: 1;
+  /* font-family: 'Lobster'; */
 }
 nav #nav-spacer {
   flex: 7;
@@ -32,12 +40,8 @@ nav #nav-spacer {
 }
 nav h3 {
   flex: 1;
-  padding-top: 1.5vh;
-  padding-right: 1.5vw;
   flex-grow: 1;
-}
-nav h3:hover {
-  cursor: pointer; /* What is this for? */
+  padding-right: 1vh;
 }
 
 /* Lower Area */
@@ -52,7 +56,6 @@ nav h3:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  border-right: 1px solid gray;
 }
 #container .sidebar .sidebar-content {
   width: 90%;
@@ -89,22 +92,23 @@ nav h3:hover {
   flex-direction: row;
 }
 
+/* Display Area (Right of sidenav) */
 #container .not-sidebar .central {
   flex: 3;
-
   display: flex;
   flex-direction: column;
-
   text-align: center;
 }
-
+#container .not-sidebar .central .section-label {
+  font-size: 50px;
+}
 #container .not-sidebar .central .numbers {
   display: flex;
   justify-content: space-evenly;
 }
-
 #container .not-sidebar .central .numbers .numbers-content {
   width: 30%;
+  height: 15vh;
   margin: 1vh auto;
   padding: 4% 5%;
   border: none;
@@ -113,43 +117,76 @@ nav h3:hover {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   background-color: white;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
-
 #container .not-sidebar .central .numbers .numbers-content:hover {
   background-color: #ccc;
   cursor: pointer;
 }
 
+/* Chart Styling */
+#container .central .charts {
+  background-color: white;
+  border: none;
+  border-radius: 7.5px;
+  padding: 2.5%;
+  width: 60vw;
+  height: 52.5vh;
+  margin: 2vh auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+#container .central #chart2 {
+  display: none;
+}
+#container .central #chart3 {
+  display: none;
+}
+
+/* Notifs */
 #container .not-sidebar .right {
   flex: 1;
-  border-left: 1px solid gray;
-
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+#container .not-sidebar #notif-wrapper {
+  background-color: white;
+  border: none;
+  border-radius: 7.5px;
+  width: 90%;
+  margin: 0 auto;
+  height: 80vh;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+#container .not-sidebar #notif-wrapper .section-label {
+  margin-top: 2.5vh;
+  font-size: 32.5px;
 }
 
 /* Settings */
 #settings-modal {
   border: none;
-  border-radius: 15px;
-  width: 40vw;
+  border-radius: 10px;
+  width: 30vw;
   padding: 2.5%;
-  margin: auto;
+  margin: auto 0;
   background-color: white;
   text-align: center;
 }
 #settings-modal #settings-title {
-  font-size: 55px;
+  font-size: 45px;
 }
 #settings-modal #wrap {
-  width: 50%;
+  width: 80%;
   margin: auto;
   text-align: left;
 }
 #settings-modal .ttl {
-  font-size: 25px;
+  font-size: 20px;
 }
 #settings-modal input {
   margin-top: 0.5vh;
@@ -157,7 +194,7 @@ nav h3:hover {
   padding: 1.2.5% 3%;
   border: 1px solid gray;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 18px;
   width: 75%;
 }
 #settings-modal select {
@@ -191,4 +228,41 @@ nav h3:hover {
 }
 #sv:hover {
   background-color: #5e84d1;
+}
+
+/* About */
+#about-modal {
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 2.5%;
+}
+#about-modal h1 {
+  font-size: 45px;
+}
+#about-modal #h3 {
+  font-size: 20px;
+}
+#contact-modal {
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 2.5%;
+  max-width: 90%;
+  margin: auto;
+}
+
+/* help */
+#help-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+#help-modal {
+  flex: 1;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 2.5%;
+  max-width: 90%;
+  margin: auto;
 }
