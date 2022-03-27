@@ -134,3 +134,64 @@ nav h3:hover {
 }
 
 /* Settings */
+#settings-modal {
+  border: none;
+  border-radius: 15px;
+  width: 40vw;
+  padding: 2.5%;
+  margin: auto;
+  background-color: white;
+  text-align: center;
+}
+#settings-modal #settings-title {
+  font-size: 55px;
+}
+#settings-modal #wrap {
+  width: 50%;
+  margin: auto;
+  text-align: left;
+}
+#settings-modal .ttl {
+  font-size: 25px;
+}
+#settings-modal input {
+  margin-top: 0.5vh;
+  margin-bottom: 1.5vh;
+  padding: 1.2.5% 3%;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 20px;
+  width: 75%;
+}
+#settings-modal select {
+  margin-top: 0.5vh;
+  margin-bottom: 1.5vh;
+  padding: 1.2.5% 3%;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 20px;
+  width: 75%;
+}
+#settings-modal button {
+  border: none;
+  border-radius: 5px;
+  padding: 1.25% 3%;
+  width: 49%;
+  font-size: 20px;
+  transition: 0.3s;
+}
+#settings-modal button:hover {
+  cursor: pointer;
+}
+#lg {
+  background-color: rgb(216, 68, 68);
+}
+#lg:hover {
+  opacity: 0.75;
+}
+#sv {
+  background-color: #4e79cf;
+}
+#sv:hover {
+  background-color: #5e84d1;
+}
