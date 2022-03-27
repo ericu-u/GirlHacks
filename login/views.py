@@ -12,7 +12,8 @@ def login_pg(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect('dashboard')
+            print("heree")
+            return HttpResponseRedirect('/dashboard/')
         return render(request, "login/login_error.html", {'login': log_in})
 
     return render(request, 'login/login.html', {'login': log_in})
