@@ -13,8 +13,8 @@ from signup.models import UserProfile
 # Helper Functions
 
 
-def weight_percentile(age, sex, value):
-    if sex == 'female':
+def weight_percentile(age, sex, weight):
+    if sex == 'Female':
         if age == 13:
             mean, stderr = 125.8, 3.72
         if age == 14:
@@ -45,7 +45,7 @@ def weight_percentile(age, sex, value):
             mean, stderr = 164.6, 2.10
         if age > 80:
             mean, stderr = 149.7, 2.22
-    elif sex == 'male':
+    elif sex == 'Male':
         if age == 13:
             mean, stderr = 133.2, 3.33
         if age == 14:
@@ -77,11 +77,15 @@ def weight_percentile(age, sex, value):
         if age > 80:
             mean, stderr = 177.5, 1.98
     sim_distr = np.random.normal(mean, stderr, 10000)
-    return np.percentile(sim_distr, value)
+    try:
+        answer = np.percentile(sim_distr, weight)
+        return answer
+    except Exception as e:
+        return 9  # np.percentile(sim_distr, weight)
 
 
-def bmi_percentile(age, sex, value):
-    if sex == 'female':
+def bmi_percentile(age, sex, bmi):
+    if sex == 'Female':
         if age == 13:
             mean, stderr = 22.7, 0.54
         if age == 14:
@@ -112,7 +116,7 @@ def bmi_percentile(age, sex, value):
             mean, stderr = 29.8, 0.37
         if age > 80:
             mean, stderr = 28.0, 0.37
-    elif sex == 'male':
+    elif sex == 'Male':
         if age == 13:
             mean, stderr = 22.7, 0.48
         if age == 14:
@@ -144,7 +148,11 @@ def bmi_percentile(age, sex, value):
         if age > 80:
             mean, stderr = 27.6, 0.23
     sim_distr = np.random.normal(mean, stderr, 10000)
-    return np.percentile(sim_distr, value)
+    try:
+        answer = np.percentile(sim_distr, bmi)
+        return answer
+    except Exception as e:
+        return 10  # np.percentile(sim_distr, bmi)
 
 # Render Requests
 
@@ -159,6 +167,7 @@ def dashboard(request):
         'age': user.age,
         'excercise': user.excercise,
         'diet': user.diet,
+        'bmi': round(user.bmi, 2),
     }
     return render(request, 'dashboard/dashboard.html', data)
 
@@ -173,7 +182,7 @@ def resources(request):
         'age': user.age,
         'excercise': user.excercise,
         'diet': user.diet,
-        'bmi': user.bmi
+        'bmi': user.bmi,
         'weight_percentile': weight_percentile(user.age, user.sex, user.weight),
         'bmi_percentile': bmi_percentile(user.age, user.sex, user.bmi),
     }
@@ -208,6 +217,7 @@ def help(request):
     }
     return render(request, 'dashboard/help.html', data)
 
+
 @login_required(login_url='/login/')
 def about(request):
     user = UserProfile.objects.get(username=request.user)
@@ -228,7 +238,8 @@ def about(request):
 def get_weight(request):
     if request.method == 'GET':
         weight = [170, 178, 171, 167, 170, 171, 165]
-        weeks = ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7"]
+        weeks = ["Week 1", "Week 2", "Week 3",
+                 "Week 4", "Week 5", "Week 6", "Week 7"]
         response = {
             "data": weight,
             "weeks": weeks
@@ -236,10 +247,12 @@ def get_weight(request):
         return JsonResponse(response, status=200)
     return JsonResponse({"error": "Something went wrong"}, status=400)
 
+
 def get_height(request):
     if request.method == 'GET':
         height = [6.7, 10.1, 9.8, 5.3, 6.4, 7.6, 7.9]
-        weeks = ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7"]
+        weeks = ["Week 1", "Week 2", "Week 3",
+                 "Week 4", "Week 5", "Week 6", "Week 7"]
         response = {
             "data": height,
             "weeks": weeks
@@ -247,10 +260,12 @@ def get_height(request):
         return JsonResponse(response, status=200)
     return JsonResponse({"error": "Something went wrong"}, status=400)
 
+
 def get_BMI(request):
     if request.method == 'GET':
         bmi = [26.5, 26.4, 27.1, 26.9, 24.8, 26.3, 26.1]
-        weeks = ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7"]
+        weeks = ["Week 1", "Week 2", "Week 3",
+                 "Week 4", "Week 5", "Week 6", "Week 7"]
         response = {
             "data": bmi,
             "weeks": weeks
