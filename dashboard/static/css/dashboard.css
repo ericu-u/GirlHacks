@@ -5,12 +5,9 @@
   font-family: "Poppins";
 }
 
-h1 {
-  color: red;
-}
-
-.section-label {
-}
+/* #weightloss-chart {
+  max-width: fit-content;
+} */
 
 .dashboard-page {
   display: flex;
