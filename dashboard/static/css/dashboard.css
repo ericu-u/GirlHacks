@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster:wght@300;400;500;600;700;800&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,9 +16,15 @@ nav {
   display: flex;
   flex-direction: row;
   height: 10vh;
-  padding-top: 2vh;
+  padding: 2vh 0;
   color: white;
   background-color: #1d4e89;
+  align-items: center;
+}
+nav #logo-pic {
+  min-width: 4vh;
+  max-width: 7vh;
+  margin-left: 1vh;
 }
 nav h1 {
   flex: 1;
@@ -25,6 +32,7 @@ nav h1 {
   font-weight: bold;
   padding-left: 1.5vw;
   flex-grow: 1;
+  font-family: 'Lobster';
 }
 nav #nav-spacer {
   flex: 7;
@@ -32,12 +40,8 @@ nav #nav-spacer {
 }
 nav h3 {
   flex: 1;
-  padding-top: 1.5vh;
-  padding-right: 1.5vw;
   flex-grow: 1;
-}
-nav h3:hover {
-  cursor: pointer; /* What is this for? */
+  padding-right: 1vh;
 }
 
 /* Lower Area */
