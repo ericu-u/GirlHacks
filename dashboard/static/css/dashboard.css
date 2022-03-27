@@ -243,3 +243,26 @@ nav h3 {
 #about-modal #h3 {
   font-size: 20px;
 }
+#contact-modal {
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 2.5%;
+  max-width: 90%;
+  margin: auto;
+}
+
+/* help */
+#help-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+#help-modal {
+  flex: 1;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 2.5%;
+  max-width: 90%;
+  margin: auto;
+}
