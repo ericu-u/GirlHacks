@@ -32,6 +32,7 @@ def resources(request):
         'age': user.age,
         'excercise': user.excercise,
         'diet': user.diet,
+        'bmi': user.bmi
     }
     return render(request, 'dashboard/resources.html', data)
 

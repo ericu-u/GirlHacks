@@ -19,8 +19,10 @@ def signup(request):
             height = request.POST['height']
             weight = request.POST['weight']
             age = request.POST['age']
+            sex = request.POST['sex']
             excercise = request.POST['excercise']
             diet = request.POST['diet']
+            bmi = (weight/height**2)*703
             if User.objects.filter(email = email).exists():
                 return render(request,'signup/signup_error.html', {"ucreation": UserCreation, "error": "Email Already Exists!"})
             if User.objects.filter(username = username).exists():
@@ -31,7 +33,7 @@ def signup(request):
                 user.set_password(password)
                 user.save()
                 # creating a userprofile
-                userp = UserProfile(email = email, username = username, password = password, height=height, weight=weight, age=age, excercise=excercise, diet=diet)
+                userp = UserProfile(email = email, username = username, password = password, height=height, weight=weight, age=age, excercise=excercise, diet=diet, bmi=bmi, sex=sex)
                 userp.save()
                 u = User.objects.get(email=email)
                 user = authenticate(username=u.get_username(),password=password)
