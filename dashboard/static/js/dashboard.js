@@ -49,4 +49,6 @@ window.onload = function() {
         data: chartData,
         options: chartOptions
     });
+
+    myChart.update();
 }
