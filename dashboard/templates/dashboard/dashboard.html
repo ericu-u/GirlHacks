@@ -3,6 +3,9 @@
 <head>
     <link rel="stylesheet" href="../../static/css/dashboard.css">
     <script src="../../static/js/dashboard.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,20 +24,19 @@
         <div class="not-sidebar">
 
             <div class="central">
-                <h2 class="section-label">Dashboard</h2>
+                {% block content %}
+                <h2 class="section-label">Welcome, {{ name }}</h2>
                 <div class="numbers">
 
-                    {% block content %}
                     <h3>{{ height }}</h3>
                     <h3>sleep</h3>
-                    <h3>BMI</h3>
-                    {% endblock %}
+                    <h3>BMI?</h3>
 
                 </div>
                 <div class="charts">
                     <canvas id="weightloss-chart"></canvas>
                 </div>
-                
+                {% endblock %}
             </div>
 
             <div class="right">

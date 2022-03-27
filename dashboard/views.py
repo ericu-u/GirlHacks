@@ -12,7 +12,7 @@ def dashboard(request):
         'name': user.username,
         'height': user.height,
         'weight': user.weight,
-        'age': user.weight,
+        'age': user.age,
         'excercise': user.excercise,
         'diet': user.diet,
     }

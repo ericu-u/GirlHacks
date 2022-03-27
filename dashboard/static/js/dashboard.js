@@ -1,19 +1,13 @@
 
-var document.getElementById()
-
+// var  document.getElementById()
 
 function refreshChart() {
-
-}
-
-window.onload = function() {
-    var refreshInterval = 3000;
-
     var chartData = {
-        labels: ['Sensor 1', 'Sensor 2', 'Sensor 3', 'Sensor 4', 'Sensor 5', 'Sensor 6', 'Sensor 7'],
+        labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', ],
         datasets: [{
-            label: 'Sensor Data',
-            data: [10, 13, 12, 11, 13, 19, 12]
+            label: 'Weight Over Time',
+            data: [10, 13, 12, 11, 13, 19, 12],
+            borderColor: 'red',
         }]
     };
     
@@ -24,29 +18,19 @@ window.onload = function() {
             fontSize: 45,
         },
         scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
+            y: {
+                beginAtZero: true
+            }
         }
     };
 
-    var ctx = document.getElementById('chartCanvas').getContext('2d');
+    var ctx = document.getElementById('weightloss-chart').getContext('2d');
 
     var myChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'line',
         data: chartData,
         options: chartOptions
     });
-
-    setInterval(function(){
-        console.log("Update Chart");
-        var dps = chartData.datasets[0].data;
-        for(var i = 0; i < dps.length; i++) {
-            dps[i] += getRandomInt(-10, 10);
-        }
-        
-        myChart.update();
-    }, refreshInterval);
 }
+
+window.
