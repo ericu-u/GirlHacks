@@ -36,7 +36,32 @@
             </div>
         </div>
         <div id="display" class="not-sidebar">
-            
+            <div class="central">
+                <h1 class="section-label">Welcome, {{ name }}</h1>
+                <div class="numbers">
+                    <div class="numbers-content" onclick="reloadChart('height')">
+                        <h3>Height</h3>
+                        <h3>{{ height }}</h3>
+                        <h3>_ percentile in the U.S.</h3>
+                    </div>
+                    <div class="numbers-content">
+                        <h3>Hours of Sleep</h3>
+                        <h3>insert sleep value</h3>
+                        <h3>_ percentile in the U.S.</h3>
+                    </div>
+                    <div class="numbers-content">
+                        <h3>BMI</h3>
+                        <h3>insert BMI value</h3>
+                        <h3>_ percentile in the U.S.</h3>
+                    </div>
+                </div>
+                <div class="charts">
+                    <canvas id="weightloss-chart" style="height: 50vh; width: 60vw;"></canvas>
+                </div>
+            </div>
+            <div class="right">
+                <h1 class="section-label">Notifications</h1>
+            </div>
         </div>
     </div>
 </body>
