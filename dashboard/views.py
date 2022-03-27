@@ -49,6 +49,19 @@ def settings(request):
     return render(request, 'dashboard/settings.html', data)
 
 @login_required(login_url='/login/')
+def help(request):
+    user = UserProfile.objects.get(username=request.user)
+    data = {
+        'name': user.username,
+        'height': user.height,
+        'weight': user.weight,
+        'age': user.age,
+        'excercise': user.excercise,
+        'diet': user.diet,
+    }
+    return render(request, 'dashboard/help.html', data)
+
+@login_required(login_url='/login/')
 def about(request):
     user = UserProfile.objects.get(username=request.user)
     data = {
@@ -60,6 +73,7 @@ def about(request):
         'diet': user.diet,
     }
     return render(request, 'dashboard/about.html', data)
+
 
 # API Endpoint
 def get_weight(request):
@@ -75,7 +89,7 @@ def get_weight(request):
 
 def get_height(request):
     if request.method == 'GET':
-        height = [170, 178, 171, 167, 170, 171, 165]
+        height = [6.7, 10.1, 9.8, 5.3, 6.4, 7.6, 7.9]
         weeks = ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7"]
         response = {
             "data": height,

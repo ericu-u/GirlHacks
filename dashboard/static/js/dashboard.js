@@ -73,9 +73,9 @@ function loadHeight() {
         success: function (response) {
             // get data from request and update chart
             labels = response['weeks']
-            label = 'Height Over Time'
+            label = 'Average Sleep'
             data = response['data']
-            LoadChart(labels, label, data, 'chart2', "Line Chart of Height over Weeks")
+            LoadChart(labels, label, data, 'chart2', "Line Chart of Sleep over Weeks")
         },
         error: function (response) {
             // alert the error if any error occured
