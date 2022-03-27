@@ -11,7 +11,9 @@
     <title>About</title>
 </head>
 <body>
+    {% load static %}
     <nav>
+        <img id="logo-pic" src="{% static 'healthwealth.png' %}">
         <h1>HealthWealth</h1>
         <div id="nav-spacer"></div>
         <h3>Welcome, {{ name }}</h3>
@@ -36,7 +38,12 @@
             </div>
         </div>
         <div id="display" class="not-sidebar">
-            
+            <div id="about-modal">
+                <h1>About</h1>
+                <h3>Version: 0.1.0</h3>
+                <h3>Github: <a href="https://github.com/ericu-u/GirlHacks">https://github.com/ericu-u/GirlHacks</a></h3>
+                <h3>By: Eric Wang and Jonathan Lo</h3>
+            </div>
         </div>
     </div>
 </body>

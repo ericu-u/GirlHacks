@@ -1,6 +1,8 @@
 # Django Imports
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings as djsettings
+from django.conf.urls.static import static
 
 # Page Renders
 from landing.views import landing
@@ -24,4 +26,4 @@ urlpatterns = [
     path('api/height', get_height),
     path('api/BMI', get_BMI),
     path('logout', log_out),
-]
+] + static(djsettings.MEDIA_URL, document_root=djsettings.MEDIA_ROOT)

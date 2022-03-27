@@ -8,10 +8,12 @@
     <link rel="stylesheet" href=./../../static/css/login.css>
 </head>
 <body>
+    {% load static %}
     <form class="inputs" method="POST" action="/login/">
         {% csrf_token %}
         <div id="spacer-1"></div>
         <div class="block">
+            <img id="logo" src="{% static 'healthwealth.png' %}">
             <h1 id="title">Log In to HealthWealth</h1>
             <div class="ip-area">
                 <h4 class="ques">Username</h4>

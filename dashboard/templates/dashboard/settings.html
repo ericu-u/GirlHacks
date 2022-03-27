@@ -11,7 +11,9 @@
     <title>Settings</title>
 </head>
 <body>
+    {% load static %}
     <nav>
+        <img id="logo-pic" src="{% static 'healthwealth.png' %}">
         <h1>HealthWealth</h1>
         <div id="nav-spacer"></div>
         <h3>Welcome, {{ name }}</h3>
