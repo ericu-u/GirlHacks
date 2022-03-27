@@ -20,6 +20,12 @@ def dashboard(request):
 def resources(request):
     return render(request, 'dashboard/resources.html')
 
+def settings(request):
+    return render(request, 'dashboard/settings.html')
+
+def about(request):
+    return render(request, 'dashboard/about.html')
+
 # API Endpoint
 def get_weight(request):
     if request.method == 'GET':

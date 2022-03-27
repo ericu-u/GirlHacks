@@ -1,7 +1,7 @@
 
 // var  document.getElementById()
-
 function refreshChart() {
+    
     var chartData = {
         labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', ],
         datasets: [{
@@ -32,5 +32,3 @@ function refreshChart() {
         options: chartOptions
     });
 }
-
-window.

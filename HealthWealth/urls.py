@@ -4,7 +4,7 @@ from django.urls import path
 from landing.views import landing
 from login.views import login_pg
 from signup.views import signup
-from dashboard.views import dashboard, get_weight, resources
+from dashboard.views import dashboard, get_weight, resources, settings, about
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -13,5 +13,7 @@ urlpatterns = [
     path('signup', signup,  name='signup'),
     path('dashboard', dashboard, name='dashboard'),
     path('resources', resources, name="resources"),
+    path('settings', settings, name="settings"),
+    path('about', about, name="about"),
     path('api/weight', get_weight),
 ]
