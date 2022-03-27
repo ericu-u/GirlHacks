@@ -49,6 +49,19 @@ def settings(request):
     return render(request, 'dashboard/settings.html', data)
 
 @login_required(login_url='/login/')
+def help(request):
+    user = UserProfile.objects.get(username=request.user)
+    data = {
+        'name': user.username,
+        'height': user.height,
+        'weight': user.weight,
+        'age': user.age,
+        'excercise': user.excercise,
+        'diet': user.diet,
+    }
+    return render(request, 'dashboard/help.html', data)
+
+@login_required(login_url='/login/')
 def about(request):
     user = UserProfile.objects.get(username=request.user)
     data = {
@@ -60,6 +73,7 @@ def about(request):
         'diet': user.diet,
     }
     return render(request, 'dashboard/about.html', data)
+
 
 # API Endpoint
 def get_weight(request):

@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="../../static/css/dashboard.css">
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="../../static/js/dashboard.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>About</title>
 </head>
 <body>
     {% load static %}
@@ -21,7 +20,7 @@
     </nav>
     <div id="container">
         <div class="sidebar">
-            <div class="sidebar-content" onclick="location.href = '/dashboard'" id="selected">
+            <div class="sidebar-content" onclick="location.href = '/dashboard'">
                 <i class="material-icons">assessment</i>
                 <h2>Overview</h2>
             </div>
@@ -33,7 +32,7 @@
                 <i class="material-icons">settings</i>
                 <h2>Settings</h2>
             </div>
-            <div class="sidebar-content" onclick="location.href = '/help'">
+            <div class="sidebar-content" onclick="location.href = '/help'" id="selected">
                 <i class="material-icons">help</i>
                 <h2>How to Use</h2>
             </div>
@@ -43,30 +42,7 @@
             </div>
         </div>
         <div id="display" class="not-sidebar">
-            <div class="central">
-                <h1 class="section-label">Dashboard</h1>
-                <div class="numbers">
-                    <div class="numbers-content" id="chart-weight">
-                        <h3>Height: {{ height }}</h3>
-                    </div>
-                    <div class="numbers-content" id="chart-height">
-                        <h3>Hours of Sleep: insert sleep value</h3>
-                    </div>
-                    <div class="numbers-content" id="chart-bmi">
-                        <h3>BMI: insert BMI value</h3>
-                    </div>
-                </div>
-                <div class="charts">
-                    <canvas id="chart1" style="height: 48vh; width: 57.5vw;"></canvas>
-                    <canvas id="chart2" style="height: 48vh; width: 57.5vw; display: none;"></canvas>
-                    <canvas id="chart3" style="height: 48vh; width: 57.5vw; display: none;"></canvas>
-                </div>
-            </div>
-            <div class="right">
-                <div id="notif-wrapper">
-                    <h1 class="section-label">Notifications</h1>
-                </div>
-            </div>
+            
         </div>
     </div>
 </body>
