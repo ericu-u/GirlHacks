@@ -31,8 +31,7 @@ nav h3 {
 #container {
   display: flex;
   flex-direction: row;
-  justify-content: left;
-  align-items: left;
+  justify-content: flex-start;
 }
 
 #container .sidebar {
@@ -40,6 +39,6 @@ nav h3 {
   display: flex;
 }
 
-#contianer .not-sidebar {
+#container .not-sidebar {
   flex: 7;
 }
