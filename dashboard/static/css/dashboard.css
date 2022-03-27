@@ -171,22 +171,22 @@ nav h3 {
 #settings-modal {
   border: none;
   border-radius: 15px;
-  width: 40vw;
+  width: 30vw;
   padding: 2.5%;
-  margin: auto;
+  margin: auto 0;
   background-color: white;
   text-align: center;
 }
 #settings-modal #settings-title {
-  font-size: 55px;
+  font-size: 45px;
 }
 #settings-modal #wrap {
-  width: 50%;
+  width: 80%;
   margin: auto;
   text-align: left;
 }
 #settings-modal .ttl {
-  font-size: 25px;
+  font-size: 20px;
 }
 #settings-modal input {
   margin-top: 0.5vh;
@@ -194,7 +194,7 @@ nav h3 {
   padding: 1.2.5% 3%;
   border: 1px solid gray;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 18px;
   width: 75%;
 }
 #settings-modal select {
