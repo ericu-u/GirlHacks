@@ -13,7 +13,7 @@ from signup.models import UserProfile
 # Helper Functions
 
 
-def calculate_percentile(age, sex, value):
+def weight_percentile(age, sex, value):
     if sex == 'female':
         if age == 13:
             mean, stderr = 125.8, 3.72
@@ -76,7 +76,74 @@ def calculate_percentile(age, sex, value):
             mean, stderr = 80.5, 0.90
         if age > 80:
             mean, stderr = 177.5, 1.98
-    sim_distr = np.random.normal(20, 2.5, 10000)
+    sim_distr = np.random.normal(mean, stderr, 10000)
+    return np.percentile(sim_distr, value)
+
+
+def bmi_percentile(age, sex, value):
+    if sex == 'female':
+        if age == 13:
+            mean, stderr = 22.7, 0.54
+        if age == 14:
+            mean, stderr = 23.7, 0.39
+        if age == 15:
+            mean, stderr = 24.0, 0.55
+        if age == 16:
+            mean, stderr = 25.0, 0.56
+        if age == 17:
+            mean, stderr = 25.6, 0.65
+        if age == 18:
+            mean, stderr = 26.1, 0.66
+        if age == 19:
+            mean, stderr = 26.9, 0.82
+        if age in range(20, 30):
+            mean, stderr = 29.8, 0.24
+        if age in range(30, 40):
+            mean, stderr = 28.3, 0.45
+        if age in range(40, 50):
+            mean, stderr = 29.9, 0.32
+        if age in range(50, 60):
+            mean, stderr = 30.7, 0.51
+        if age in range(60, 70):
+            mean, stderr = 30.3, 0.41
+        if age in range(60, 70):
+            mean, stderr = 30.3, 0.47
+        if age in range(70, 80):
+            mean, stderr = 29.8, 0.37
+        if age > 80:
+            mean, stderr = 28.0, 0.37
+    elif sex == 'male':
+        if age == 13:
+            mean, stderr = 22.7, 0.48
+        if age == 14:
+            mean, stderr = 22.5, 0.47
+        if age == 15:
+            mean, stderr = 24.4, 0.67
+        if age == 16:
+            mean, stderr = 23.6, 0.44
+        if age == 17:
+            mean, stderr = 25.1, 0.63
+        if age == 18:
+            mean, stderr = 24.7, 0.68
+        if age == 19:
+            mean, stderr = 26.1, 0.63
+        if age in range(20, 30):
+            mean, stderr = 29.4, 0.19
+        if age in range(30, 40):
+            mean, stderr = 27.6, 0.43
+        if age in range(40, 50):
+            mean, stderr = 30.3, 0.39
+        if age in range(50, 60):
+            mean, stderr = 30.1, 0.32
+        if age in range(60, 70):
+            mean, stderr = 29.8, 0.34
+        if age in range(60, 70):
+            mean, stderr = 29.9, 0.23
+        if age in range(70, 80):
+            mean, stderr = 29.2, 0.31
+        if age > 80:
+            mean, stderr = 27.6, 0.23
+    sim_distr = np.random.normal(mean, stderr, 10000)
     return np.percentile(sim_distr, value)
 
 # Render Requests
@@ -106,7 +173,8 @@ def resources(request):
         'age': user.age,
         'excercise': user.excercise,
         'diet': user.diet,
-        'percentile': calculate_percentile(user.age, user.sex, user.weight)
+        'weight_percentile': weight_percentile(user.age, user.sex, user.weight),
+        'bmi_percentile': bmi_percentile(user.age, user.sex, user.bmi),
     }
 
     return render(request, 'dashboard/resources.html', data)
