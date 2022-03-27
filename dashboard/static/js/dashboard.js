@@ -1,7 +1,7 @@
 
 // var  document.getElementById()
-function refreshChart() {
-    
+
+window.onload = function() {
     var chartData = {
         labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', ],
         datasets: [{
@@ -21,7 +21,9 @@ function refreshChart() {
             y: {
                 beginAtZero: true
             }
-        }
+        },
+        responsive: false,
+        maintainAspectRatio: false,
     };
 
     var ctx = document.getElementById('weightloss-chart').getContext('2d');
