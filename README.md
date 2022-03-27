@@ -7,7 +7,7 @@ HealthWealth is designed to allow its users to gain awareness to potentially har
 
 
 ## Inspiration
-Both of us used to be competitive swimmers but grew complacent due to COVID. We realized we had unknowingly slipped into bad habits that affected our lifestyle. Here, 
+Both of us used to be competitive swimmers but grew complacent due to COVID. We realized we had unknowingly slipped into bad habits that affected our lifestyle. Here, we decided to create a Webapp to keep ourselves in check. We wanted to take this oppurtunity to build something that would benifit not only us, but others as well.
 
 
 ## Tech Stack
