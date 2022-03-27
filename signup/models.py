@@ -9,6 +9,8 @@ class UserProfile(models.Model):
     height = models.IntegerField()
     weight = models.IntegerField()
     age = models.IntegerField()
+    sex = models.CharField(max_length=10)
+    bmi = models.FloatField()
     excercise = models.IntegerField()
     diet = models.CharField(max_length=100)
     
