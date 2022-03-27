@@ -3,9 +3,8 @@ from django.http import JsonResponse
 
 from signup.models import UserProfile
 
-# Create your views here.
 
-
+# Render Requests
 def dashboard(request):
     user = UserProfile.objects.get(username=request.user)
     data = {
@@ -16,9 +15,12 @@ def dashboard(request):
         'excercise': user.excercise,
         'diet': user.diet,
     }
-
     return render(request, 'dashboard/dashboard.html', data)
 
+def resources(request):
+    return render(request, 'dashboard/resources.html')
+
+# API Endpoint
 def get_weight(request):
     if request.method == 'GET':
         weight = [200, 201, 200.5, 199, 200]
