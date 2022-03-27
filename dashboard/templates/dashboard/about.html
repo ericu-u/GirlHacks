@@ -1,1 +1,43 @@
-this is about
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../static/css/dashboard.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="../../static/js/dashboard.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <nav>
+        <h1>HealthWealth</h1>
+        <div id="nav-spacer"></div>
+        <h3>Welcome, {{ name }}</h3>
+    </nav>
+    <div id="container">
+        <div class="sidebar">
+            <div class="sidebar-content" onclick="location.href = '/dashboard'">
+                <i class="material-icons">assessment</i>
+                <h2>Overview</h2>
+            </div>
+            <div class="sidebar-content" onclick="location.href = '/resources'">
+                <i class="material-icons">volunteer_activism</i>
+                <h2>Resources</h2>
+            </div>
+            <div class="sidebar-content" onclick="location.href = '/settings'">
+                <i class="material-icons">settings</i>
+                <h2>Settings</h2>
+            </div>
+            <div class="sidebar-content" onclick="location.href = '/about'" id="selected">
+                <i class="material-icons">info</i>
+                <h2>About</h2>
+            </div>
+        </div>
+        <div id="display" class="not-sidebar">
+            
+        </div>
+    </div>
+</body>
+</html>
