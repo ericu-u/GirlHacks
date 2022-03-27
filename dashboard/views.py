@@ -89,7 +89,7 @@ def get_weight(request):
 
 def get_height(request):
     if request.method == 'GET':
-        height = [170, 178, 171, 167, 170, 171, 165]
+        height = [6.7, 10.1, 9.8, 5.3, 6.4, 7.6, 7.9]
         weeks = ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7"]
         response = {
             "data": height,
