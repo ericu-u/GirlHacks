@@ -5,6 +5,7 @@
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="../../static/js/dashboard.js"></script>
+    <script defer src="../../static/js/modal.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,9 +66,45 @@
             <div class="right">
                 <div id="notif-wrapper">
                     <h1 class="section-label">Notifications</h1>
+                    <div id="notif-post">
+                        
+                        <div class="notif-card">
+                            <h3>Sleep 1.3hrs More</h3>
+                            <h6>15min ago</h6>
+                        </div>
+                        <div class="notif-card">
+                            <h3>Take a look at your Resources</h3>
+                            <h6>47min ago</h6>
+                        </div>
+                        <div class="notif-card">
+                            <h3>Check out your daily insights on Dashboard</h3>
+                            <h6>1h ago</h6>
+                        </div>
+                        <div class="notif-card">
+                            <h3>Make sure to drink Water!</h3>
+                            <h6>3h ago</h6>
+                        </div>
+                        <div class="notif-card">
+                            <h3>Confirm your Email</h3>
+                            <h6>6h ago</h6>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <h1>How many hours did you sleep today?</h1>
+        <input type="number">
+        <button id="bt-close">Submit</button>
+    </div>
+  
+  </div>
 </body>
 </html>

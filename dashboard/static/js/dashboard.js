@@ -132,3 +132,5 @@ buttonWeight.addEventListener("click", () => {
     chart2.style.display = 'none'
     chart1.style.display = 'block'
 })
+
+// Query for sleep
