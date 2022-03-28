@@ -233,8 +233,6 @@ def about(request):
 
 
 # API Endpoint
-
-
 def get_weight(request):
     if request.method == 'GET':
         weight = [170, 178, 171, 167, 170, 171, 165]
