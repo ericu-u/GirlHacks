@@ -25,7 +25,7 @@ Code Flow:<br>
 ```bash
 pipenv shell
 ```
- 4. Create a `config.json` and input Client IDs, Secrets, and Tokens according to `config.json.example`. You will need PayPal and Discord credentials.(https://cloud.google.com/python/django/appengine).
+ 4. Create a `config.json` and input Client IDs, Secrets, and Tokens according to `config.json.example`. 
  5. Start local server using: 
   ```
   python3 manage.py runserver
